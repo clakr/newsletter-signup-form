@@ -1,4 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { inject, onBeforeMount } from "vue";
+const addSRHeading = inject("addSRHeading") as () => void;
+
+onBeforeMount(() => {
+  addSRHeading();
+});
+</script>
 
 <template>
   <div>app</div>
