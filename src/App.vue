@@ -8,7 +8,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <div>app</div>
+  <div>qwe</div>
 </template>
 
 <style lang="scss" scoped></style>
