@@ -1,5 +1,6 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import "./_preflight.css";
+import authorModal from "./_authorModal";
 
-createApp(App).mount('#app')
+createApp(App).use(authorModal).mount("#app");
