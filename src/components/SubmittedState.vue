@@ -65,6 +65,11 @@ button {
   padding-block: 1.6rem;
   border-radius: 0.8rem;
   background-color: var(--dark-navy);
+
+  &:active {
+    background-image: linear-gradient(225deg, #ff6a3a 0%, #ff527b 100%);
+    box-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 0.5);
+  }
 }
 
 @media screen and (min-width: 1024px) {

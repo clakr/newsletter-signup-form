@@ -4,6 +4,9 @@
   --dark-navy: #242742;
   --vermellion: #ff6155;
 
+  --gradient: linear-gradient(225deg, #ff6a3a 0%, #ff527b 100%)
+  --button-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 0.50);
+
   font-family: "Roboto", sans-serif;
   color: var(--dark-navy);
   background-color: var(--dark-navy);

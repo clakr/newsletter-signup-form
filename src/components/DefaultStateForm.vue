@@ -1,9 +1,24 @@
 <script lang="ts" setup>
-import { inject } from "vue";
+import { inject, ref } from "vue";
 
 const email = inject("email");
 
-defineEmits(["formSubmit"]);
+const emit = defineEmits(["formSubmit"]);
+
+const inputEmail = ref<null | HTMLInputElement>(null);
+
+function handleSubmit(event: Event) {
+  const form = event.currentTarget as HTMLFormElement;
+  const formData = new FormData(form);
+
+  if (!formData.get("email")) {
+    const element = inputEmail.value as HTMLInputElement;
+    element.setAttribute("required", "");
+    return;
+  }
+
+  emit("formSubmit");
+}
 </script>
 
 <template>
@@ -15,7 +30,7 @@ defineEmits(["formSubmit"]);
       />
       <img src="/illustration-sign-up-mobile.svg" alt="" />
     </picture>
-    <form @submit.prevent="$emit('formSubmit')">
+    <form @submit.prevent="handleSubmit">
       <h2>Stay updated!</h2>
       <p>Join 60,000+ product managers receiving monthly updates on:</p>
       <ul>
@@ -27,11 +42,11 @@ defineEmits(["formSubmit"]);
         <label for="email">Email address</label>
         <input
           id="email"
+          ref="inputEmail"
           v-model="email"
           type="email"
           name="email"
           placeholder="email@company.com"
-          required
         />
         <span>Valid email required</span>
       </div>
@@ -140,6 +155,11 @@ button {
   padding-block: 1.6rem;
   border-radius: 0.8rem;
   background-color: var(--dark-navy);
+
+  &:active {
+    background-image: linear-gradient(225deg, #ff6a3a 0%, #ff527b 100%);
+    box-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 0.5);
+  }
 }
 
 @media screen and (min-width: 1024px) {
