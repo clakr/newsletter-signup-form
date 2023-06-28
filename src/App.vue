@@ -11,7 +11,7 @@ onBeforeMount(() => {
 const email = ref("");
 provide("email", email);
 
-const formState = ref<"toSubmit" | "submitted">("submitted");
+const formState = ref<"toSubmit" | "submitted">("toSubmit");
 
 function handleSubmit() {
   formState.value = "submitted";

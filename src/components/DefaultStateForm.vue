@@ -10,7 +10,7 @@ defineEmits(["formSubmit"]);
   <section>
     <picture>
       <source
-        media="(min-width: 1440px)"
+        media="(min-width: 1024px)"
         srcset="/illustration-sign-up-desktop.svg"
       />
       <img src="/illustration-sign-up-mobile.svg" alt="" />
@@ -45,10 +45,8 @@ section {
   background-color: white;
 }
 
-picture {
-  width: 37.5rem;
-  height: 28.4rem;
-  object-fit: cover;
+img {
+  width: 100%;
 }
 
 form {
@@ -144,7 +142,7 @@ button {
   background-color: var(--dark-navy);
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   section {
     width: 92.8rem;
     height: 64.1rem;
@@ -156,11 +154,13 @@ button {
   }
 
   picture {
-    width: 40rem;
-    height: 59.3rem;
-    object-fit: cover;
     order: 2;
+    height: 100%;
     justify-self: flex-end;
+  }
+
+  img {
+    width: unset;
   }
 
   form {

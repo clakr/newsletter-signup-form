@@ -67,7 +67,7 @@ button {
   background-color: var(--dark-navy);
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   section {
     min-height: unset;
     padding: 4.8rem 6.4rem 6.4rem;

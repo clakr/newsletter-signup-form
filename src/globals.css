@@ -9,7 +9,7 @@
   background-color: var(--dark-navy);
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   main {
     min-height: 100vh;
     min-height: 100svh;
