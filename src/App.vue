@@ -11,10 +11,15 @@ onBeforeMount(() => {
 const email = ref("");
 provide("email", email);
 
-const formState = ref<"toSubmit" | "submitted">("toSubmit");
+const formState = ref<"toSubmit" | "submitted">("submitted");
 
 function handleSubmit() {
   formState.value = "submitted";
+}
+
+function handleDismiss() {
+  formState.value = "toSubmit";
+  email.value = "";
 }
 </script>
 
@@ -23,5 +28,5 @@ function handleSubmit() {
     v-if="formState === 'toSubmit'"
     @form-submit="handleSubmit"
   />
-  <SubmittedState v-else />
+  <SubmittedState v-else @dismiss="handleDismiss" />
 </template>

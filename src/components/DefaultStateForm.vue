@@ -8,7 +8,13 @@ defineEmits(["formSubmit"]);
 
 <template>
   <section>
-    <img src="/illustration-sign-up-mobile.svg" alt="" />
+    <picture>
+      <source
+        media="(min-width: 1440px)"
+        srcset="/illustration-sign-up-desktop.svg"
+      />
+      <img src="/illustration-sign-up-mobile.svg" alt="" />
+    </picture>
     <form @submit.prevent="$emit('formSubmit')">
       <h2>Stay updated!</h2>
       <p>Join 60,000+ product managers receiving monthly updates on:</p>
@@ -25,6 +31,7 @@ defineEmits(["formSubmit"]);
           type="email"
           name="email"
           placeholder="email@company.com"
+          required
         />
         <span>Valid email required</span>
       </div>
@@ -34,7 +41,11 @@ defineEmits(["formSubmit"]);
 </template>
 
 <style lang="scss" scoped>
-img {
+section {
+  background-color: white;
+}
+
+picture {
   width: 37.5rem;
   height: 28.4rem;
   object-fit: cover;
@@ -131,5 +142,34 @@ button {
   padding-block: 1.6rem;
   border-radius: 0.8rem;
   background-color: var(--dark-navy);
+}
+
+@media screen and (min-width: 1440px) {
+  section {
+    width: 92.8rem;
+    height: 64.1rem;
+    border-radius: 3.6rem;
+    box-shadow: 0px 15px 60px 0px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 2.4rem;
+  }
+
+  picture {
+    width: 40rem;
+    height: 59.3rem;
+    object-fit: cover;
+    order: 2;
+    justify-self: flex-end;
+  }
+
+  form {
+    padding: 7.4rem 4rem;
+    row-gap: 2.4rem;
+  }
+
+  h2 {
+    font-size: 5.6rem;
+  }
 }
 </style>

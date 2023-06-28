@@ -2,6 +2,8 @@
 import { inject } from "vue";
 
 const email = inject("email");
+
+defineEmits(["dismiss"]);
 </script>
 
 <template>
@@ -16,7 +18,7 @@ const email = inject("email");
         subscription
       </p>
     </div>
-    <button>Dismiss message</button>
+    <button @click="$emit('dismiss')">Dismiss message</button>
   </section>
 </template>
 
@@ -28,6 +30,7 @@ section {
   flex-direction: column;
   justify-content: space-between;
   padding: 4rem 2.4rem;
+  background-color: white;
 }
 
 div {
@@ -62,5 +65,24 @@ button {
   padding-block: 1.6rem;
   border-radius: 0.8rem;
   background-color: var(--dark-navy);
+}
+
+@media screen and (min-width: 1440px) {
+  section {
+    min-height: unset;
+    padding: 4.8rem 6.4rem 6.4rem;
+    width: 50.4rem;
+    height: 52rem;
+    border-radius: 3.6rem;
+    box-shadow: 0px 15px 60px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  div {
+    padding-top: unset;
+  }
+
+  h2 {
+    font-size: 5.6rem;
+  }
 }
 </style>

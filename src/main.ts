@@ -5,4 +5,7 @@ import projectConfig from "./_projectConfig";
 import "./_preflight.css";
 import "./globals.css";
 
-createApp(App).use(projectConfig).use(authorModal).mount("#app");
+createApp(App)
+  .use(projectConfig, { dark: true })
+  .use(authorModal)
+  .mount("#app");
